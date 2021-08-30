@@ -1,3 +1,5 @@
+import {checkRevokation} from "../../main/sample/checkRevokation/checkRevokation.component";
+
 export const locale = {
   lang: 'de',
   data: {
@@ -9,7 +11,10 @@ export const locale = {
       AVAILABLECA: 'Available CA',
       ADDUSER: 'Add User',
       FINDUSERS: 'Find Uers',
-      DELETEUSERS : 'Delete User'
+      DELETEUSERS : 'Delete User',
+      LISTCERTS : 'Find Certificate',
+      REVOKECERT :'Revoke Certificate',
+      CHECK : 'Check Revokation'
     }
   }
 }

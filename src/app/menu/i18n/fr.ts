@@ -9,7 +9,10 @@ export const locale = {
       AVAILABLECA: 'Available CA',
       ADDUSER: 'Add User',
       FINDUSERS: 'Find Uers',
-      DELETEUSERS : 'Delete User'
+      DELETEUSERS : 'Delete User',
+      LISTCERTS : 'Find Certificate',
+      REVOKECERT :'Revoke Certificate',
+      CHECK : 'Check Revokation'
     }
   }
 }

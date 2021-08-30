@@ -15,6 +15,8 @@ import {addUser} from "./addUser/addUser.component";
 import {findUsers} from "./findUsers/findUsers.component";
 import {deleteUser} from "./deleteUser/deleteUser.component";
 import {listCerts} from "./listCerts/listCerts.component";
+import {revokeCertificate} from "./revokeCertificate/revokeCertificate.component";
+import {checkRevokation} from "./checkRevokation/checkRevokation.component";
 
 const routes = [
     {
@@ -65,13 +67,25 @@ const routes = [
         component: listCerts,
         data: {animation: 'listCerts'}
     }
+    ,
+    {
+        path: 'revokeCertificate',
+        component: revokeCertificate,
+        data: {animation: 'revokeCertificate'}
+    }
+    ,
+    {
+        path: 'checkRevokation',
+        component: checkRevokation,
+        data: {animation: 'checkRevokation'}
+    }
 
 ];
 
 @NgModule({
-    declarations: [SampleComponent, HomeComponent, Version, getEndEntity, availableCA,addUser,findUsers, deleteUser, listCerts],
+    declarations: [SampleComponent, HomeComponent, Version, getEndEntity, availableCA,addUser,findUsers, deleteUser, listCerts, revokeCertificate, checkRevokation],
     imports: [RouterModule.forChild(routes), ContentHeaderModule, TranslateModule, CoreCommonModule],
-    exports: [SampleComponent, HomeComponent, Version, getEndEntity, availableCA,addUser,findUsers, deleteUser, listCerts]
+    exports: [SampleComponent, HomeComponent, Version, getEndEntity, availableCA,addUser,findUsers, deleteUser, listCerts, revokeCertificate, checkRevokation]
 })
 export class SampleModule {
 }

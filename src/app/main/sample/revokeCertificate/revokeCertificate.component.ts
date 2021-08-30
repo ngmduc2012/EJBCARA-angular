@@ -5,15 +5,13 @@ import {locale as en} from "../i18n/en";
 import {locale as fr} from "../i18n/fr";
 import {locale as de} from "../i18n/de";
 import {locale as pt} from "../i18n/pt";
-import {UserDataVOWS} from "../findUsers/UserDataVOWS";
-import {Certificate} from "./Certificate";
 
 @Component({
-    selector: 'app-listCerts',
-    templateUrl: './listCerts.component.html',
-    styleUrls: ['./listCerts.component.css']
+    selector: 'app-revokeCertificate',
+    templateUrl: './revokeCertificate.component.html',
+    styleUrls: ['./revokeCertificate.component.css']
 })
-export class listCerts implements OnInit {
+export class revokeCertificate implements OnInit {
 
     public contentHeader: object
     /**
@@ -25,32 +23,27 @@ export class listCerts implements OnInit {
         this._coreTranslationService.translate(en, fr, de, pt)
     }
 
-    certificates : Certificate[];
-    findUsers() {
-        this.http.post<any>('http://localhost:8080/findCerts', {
+    revokeCertificate() {
+        this.http.post<any>('http://localhost:8080/revokeCertificate',  {
             "userName" : "ngmduc4",
-            "onlyValid" : false
+            "onlyValid" : false,
+            "idCert" : 68,
+            "reason" : 0
         }).subscribe({
             next: data => {
-                if(data.isEmpty){
-                    window.alert('Get no data!');
-                }
-                else {
-                    this.certificates  = data;
+                if (data) {
+                    window.alert('Revoke Certificate Success!');
+                } else {
+                    window.alert('Revoke Certificate Failure!');
                 }
 
             }
         })
-
-    }
-    selectedCert?: Certificate;
-    onSelect(list: Certificate): void {
-        this.selectedCert = list;
     }
 
     ngOnInit() {
         this.contentHeader = {
-            headerTitle: 'Find Certificate',
+            headerTitle: 'Revoke Certificate',
             actionButton: true,
             breadcrumb: {
                 type: '',
@@ -61,12 +54,11 @@ export class listCerts implements OnInit {
                         link: '/'
                     },
                     {
-                        name: 'Find Certificate',
+                        name: 'Revoke Certificate',
                         isLink: false
                     }
                 ]
             }
         }
     }
-
 }

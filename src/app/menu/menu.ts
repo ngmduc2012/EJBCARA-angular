@@ -1,5 +1,7 @@
 import { CoreMenu } from '@core/types'
 import {findUsers} from "../main/sample/findUsers/findUsers.component";
+import {revokeCertificate} from "../main/sample/revokeCertificate/revokeCertificate.component";
+import {checkRevokation} from "../main/sample/checkRevokation/checkRevokation.component";
 
 export const menu: CoreMenu[] = [
   {
@@ -69,6 +71,34 @@ export const menu: CoreMenu[] = [
     icon: 'file',
     url: 'deleteUser'
   }
+  ,
+  {
+    id: 'listCerts',
+    title: 'listCerts',
+    translate: 'MENU.LISTCERTS',
+    type: 'item',
+    icon: 'file',
+    url: 'listCerts'
+  }
+  ,
+  {
+    id: 'revokeCertificate',
+    title: 'revokeCertificate',
+    translate: 'MENU.REVOKECERT',
+    type: 'item',
+    icon: 'file',
+    url: 'revokeCertificate'
+  }
+  ,
+  {
+    id: 'checkRevokation',
+    title: 'checkRevokation',
+    translate: 'MENU.CHECK',
+    type: 'item',
+    icon: 'file',
+    url: 'checkRevokation'
+  }
+
 
 
 

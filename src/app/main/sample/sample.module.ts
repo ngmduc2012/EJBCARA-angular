@@ -17,6 +17,13 @@ import {deleteUser} from "./deleteUser/deleteUser.component";
 import {listCerts} from "./listCerts/listCerts.component";
 import {revokeCertificate} from "./revokeCertificate/revokeCertificate.component";
 import {checkRevokation} from "./checkRevokation/checkRevokation.component";
+import {p12Req} from "./p12Req/p12Req.component";
+import {certificateFromP12} from "./certificateFromP12/certificateFromP12.component";
+import {softTokenRequest} from "./softTokenRequest/softTokenRequest.component";
+import {generateKeys} from "./generateKeys/generateKeys.component";
+import {pkcs10CertificationRequest} from "./pkcs10CertificationRequest/pkcs10CertificationRequest.component";
+import {certificateRequestFromP10} from "./certificateRequestFromP10/certificateRequestFromP10.component";
+import {respondCertificate} from "./respondCertificate/respondCertificate.component";
 
 const routes = [
     {
@@ -79,13 +86,66 @@ const routes = [
         component: checkRevokation,
         data: {animation: 'checkRevokation'}
     }
-
+    ,
+    {
+        path: 'p12Req',
+        component: p12Req,
+        data: {animation: 'p12Req'}
+    }
+    ,
+    {
+        path: 'certificateFromP12',
+        component: certificateFromP12,
+        data: {animation: 'certificateFromP12'}
+    }
+    ,
+    {
+        path: 'softTokenRequest',
+        component: softTokenRequest,
+        data: {animation: 'softTokenRequest'}
+    }
+    ,
+    {
+        path: 'generateKeys',
+        component: generateKeys,
+        data: {animation: 'generateKeys'}
+    }
+    ,
+    {
+        path: 'pkcs10CertificationRequest',
+        component: pkcs10CertificationRequest,
+        data: {animation: 'pkcs10CertificationRequest'}
+    }
+    ,
+    {
+        path: 'certificateRequestFromP10',
+        component: certificateRequestFromP10,
+        data: {animation: 'certificateRequestFromP10'}
+    }
+    ,
+    {
+        path: 'respondCertificate',
+        component: respondCertificate,
+        data: {animation: 'respondCertificate'}
+    }
 ];
 
 @NgModule({
-    declarations: [SampleComponent, HomeComponent, Version, getEndEntity, availableCA,addUser,findUsers, deleteUser, listCerts, revokeCertificate, checkRevokation],
+    declarations: [SampleComponent, HomeComponent,
+        Version, getEndEntity, availableCA, addUser,
+        findUsers, deleteUser, listCerts, revokeCertificate,
+        checkRevokation, p12Req, certificateFromP12,
+        softTokenRequest,generateKeys,pkcs10CertificationRequest,
+        certificateRequestFromP10, respondCertificate
+    ],
     imports: [RouterModule.forChild(routes), ContentHeaderModule, TranslateModule, CoreCommonModule],
-    exports: [SampleComponent, HomeComponent, Version, getEndEntity, availableCA,addUser,findUsers, deleteUser, listCerts, revokeCertificate, checkRevokation]
+    exports: [SampleComponent, HomeComponent,
+        Version, getEndEntity, availableCA, addUser,
+        findUsers, deleteUser, listCerts, revokeCertificate,
+        checkRevokation, p12Req, certificateFromP12,
+        softTokenRequest,generateKeys, pkcs10CertificationRequest,
+        certificateRequestFromP10, respondCertificate
+    ]
 })
 export class SampleModule {
 }

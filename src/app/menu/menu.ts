@@ -2,6 +2,8 @@ import { CoreMenu } from '@core/types'
 import {findUsers} from "../main/sample/findUsers/findUsers.component";
 import {revokeCertificate} from "../main/sample/revokeCertificate/revokeCertificate.component";
 import {checkRevokation} from "../main/sample/checkRevokation/checkRevokation.component";
+import {p12Req} from "../main/sample/p12Req/p12Req.component";
+import {softTokenRequest} from "../main/sample/softTokenRequest/softTokenRequest.component";
 
 export const menu: CoreMenu[] = [
   {
@@ -98,9 +100,71 @@ export const menu: CoreMenu[] = [
     icon: 'file',
     url: 'checkRevokation'
   }
+  ,
+  {
+    id: 'p12Req',
+    title: 'p12Req',
+    translate: 'MENU.P12REQ',
+    type: 'item',
+    icon: 'file',
+    url: 'p12Req'
+  }
+  ,
+  {
+    id: 'certificateFromP12',
+    title: 'certificateFromP12',
+    translate: 'MENU.CERTP12',
+    type: 'item',
+    icon: 'file',
+    url: 'certificateFromP12'
+  }
+  ,
+  {
+    id: 'softTokenRequest',
+    title: 'softTokenRequest',
+    translate: 'MENU.TOKENREQ',
+    type: 'item',
+    icon: 'file',
+    url: 'softTokenRequest'
+  }
+  ,
+  {
+    id: 'generateKeys',
+    title: 'generateKeys',
+    translate: 'MENU.GENKEYS',
+    type: 'item',
+    icon: 'file',
+    url: 'generateKeys'
+  }
+  ,
+  {
+    id: 'pkcs10CertificationRequest',
+    title: 'pkcs10CertificationRequest',
+    translate: 'MENU.CERTREQ10',
+    type: 'item',
+    icon: 'file',
+    url: 'pkcs10CertificationRequest'
+  }
 
+  ,
+  {
+    id: 'certificateRequestFromP10',
+    title: 'certificateRequestFromP10',
+    translate: 'MENU.CERT10',
+    type: 'item',
+    icon: 'file',
+    url: 'certificateRequestFromP10'
+  }
 
-
+  ,
+  {
+    id: 'respondCertificate',
+    title: 'respondCertificate',
+    translate: 'MENU.CERT',
+    type: 'item',
+    icon: 'file',
+    url: 'respondCertificate'
+  }
 
 
 ]

@@ -9,17 +9,12 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Find Certificate</h4>
+                            <h4 class="card-title">P12 Request</h4>
                         </div>
                         <div class="card-body pb-1">
                             <ul class="heroes">
                                 <tr
-                                        (click)="findUsers()"> Find Certificate
-                                </tr>
-                                <tr *ngFor="let cert of certificates; index as i"
-                                    [class.selected]="cert === selectedCert"
-                                    (click)="onSelect(cert)">
-                                    {{"Certificate   " + i}}
+                                        (click)="p12Req()">P12 Request
                                 </tr>
                             </ul>
                         </div>
@@ -28,24 +23,25 @@
             </div>
         </section>
         <!-- Basic Alerts end -->
-        <div *ngIf="selectedCert">
+        <div *ngIf="keyStore">
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body pb-1">
 
-
-                        <div><span>type: </span>{{selectedCert.type}}</div><br>
-                        <div><span>certificate: </span>{{selectedCert.certificate}}</div><br>
-                        <div><span>keyStore: </span>{{selectedCert.keyStore}}</div><br>
-                        <div><span>certificateData: </span>{{selectedCert.certificateData}}</div><br>
-                        <div><span>rawCertificateData: </span>{{selectedCert.rawCertificateData}}</div>
-
-                    </div>
+                            <div><span>type: </span>{{keyStore.type}}</div>
+                            <br>
+                            <div><span>certificate: </span>{{keyStore.certificate}}</div>
+                            <br>
+                            <div><span>keyStore: </span>{{keyStore.keyStore}}</div>
+                            <br>
+                            <div><span>keystoreData: </span>{{keyStore.keystoreData}}</div>
+                            <br>
+                            <div><span>rawKeystoreData: </span>{{keyStore.rawKeystoreData}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
